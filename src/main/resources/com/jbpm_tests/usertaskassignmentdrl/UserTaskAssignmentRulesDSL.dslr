@@ -1,0 +1,15 @@
+package com.jbpm_tests.usertaskassignmentdrl;
+
+rule "Standard loan amount rule DSL"
+    when
+       There is a task with name "First User Task" and loan amount lower than 1000
+    then
+        Choose the skill with name "STANDARD_LOAN_GRANTING"
+end
+
+rule "High loan amount rule DSL"
+    when
+       There is a task with name "First User Task" and loan amount greater than 1000
+    then
+        Choose the skill with name "HIGH_AMOUNT_LOAN_GRANTING"
+end
